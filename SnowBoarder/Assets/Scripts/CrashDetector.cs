@@ -13,6 +13,7 @@ public class CrashDetector : MonoBehaviour
     {
         if(other.tag == "Ground")
         {
+            FindObjectOfType<PlayerController>().DisableControls();
             crashEffect.Play();
             Invoke(methodName: "ReloadScene",time: delayTime);
         }    
